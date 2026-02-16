@@ -1,0 +1,27 @@
+/******************************************************************************
+
+                            Online C Compiler.
+                Code, Compile, Run and Debug C program online.
+Write your code in this editor and press "Run" button to compile and execute it.
+
+*******************************************************************************/
+
+#include <stdio.h>
+
+int main()
+{
+    int a,b,mul,step;
+    scanf("%d%d",&a,&b);
+    mul=a>b ?a:b;
+    step = mul;
+    while(1){
+        
+        if(mul%a==0 && mul%b == 0)
+        break;
+        mul = mul+step;
+        printf("%d",mul);
+    }
+    
+
+    return 0;
+}
