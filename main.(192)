@@ -1,0 +1,27 @@
+/******************************************************************************
+
+                            Online C Compiler.
+                Code, Compile, Run and Debug C program online.
+Write your code in this editor and press "Run" button to compile and execute it.
+
+**************************************************************/
+#include <stdio.h>
+#include <stdlib.h>
+
+int main() {
+    int n, i;
+    int a[100], closest;
+    scanf("%d", &n);
+    for(i = 0; i < n; i++) {
+        scanf("%d", &a[i]);
+    }
+    closest = a[0];
+    for(i = 1; i < n; i++) {
+        if(abs(a[i]) < abs(closest) || 
+           (abs(a[i]) == abs(closest) && a[i] > closest)) {
+            closest = a[i];
+        }
+    }
+    printf("%d", closest);
+    return 0;
+}
