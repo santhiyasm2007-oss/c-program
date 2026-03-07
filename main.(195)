@@ -1,0 +1,41 @@
+/******************************************************************************
+
+                            Online C Compiler.
+                Code, Compile, Run and Debug C program online.
+Write your code in this editor and press "Run" button to compile and execute it.
+
+*******************************************************************************/
+#include <stdio.h>
+#include <limits.h>
+
+int main() {
+    int R, C;
+    int salary[100][100];
+    int i, j;
+    int first = INT_MIN;
+    int second = INT_MIN;
+    scanf("%d %d", &R, &C);
+    for(i = 0; i < R; i++) {
+        for(j = 0; j < C; j++) {
+            scanf("%d", &salary[i][j]);
+        }
+    }
+
+    for(i = 0; i < R; i++) {
+        for(j = 0; j < C; j++) {
+            int value = salary[i][j];
+
+            if(value > first) {
+                second = first;
+                first = value;
+            }
+            else if(value > second && value != first) {
+                second = value;
+            }
+        }
+    }
+
+    printf("%d", second);
+
+    return 0;
+}
